@@ -1,0 +1,48 @@
+# .coveragerc
+# [run]
+# source = course/
+# omit =
+#     */migrations/*
+#     */tests/*
+#     */admin.py
+
+# [report]
+# exclude_lines =
+#     pragma: no cover
+#     def __str__
+#     raise NotImplementedError
+
+[run]
+source =
+    course/
+    institution/
+    user/
+    assessment/
+    auth/
+
+omit =
+    */migrations/*
+    */tests/*
+    */admin.py
+    */apps.py
+    manage.py
+    */wsgi.py
+    */asgi.py
+    */settings/*.py
+    conftest.py
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def __str__
+    raise NotImplementedError
+    raise ValidationError
+    except ImportError
+    if settings.DEBUG
+    if TYPE_CHECKING
+    @abstractmethod
+    class Meta:
+
+[html]
+directory = coverage_html
